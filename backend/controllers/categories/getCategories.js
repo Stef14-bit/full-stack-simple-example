@@ -4,7 +4,7 @@ const getCategories = async (req, res) => {
   // write a query that returns values from multiple tables
   // hint : you have to use JOIN
   const query =
-    "select category_id,title,image_id as image from categories join images on categories.image_id= images.image_id";
+    "SELECT cat.category_id,cat.title,images.url AS image FROM categories AS cat join images on cat.image_id= images.image_id";
   connection
     .promise()
     .query(query)
